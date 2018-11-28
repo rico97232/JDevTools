@@ -30,6 +30,7 @@ public class PGSQL_Connection {
         Statement stmt = null;
         // The queryString
         String queryString = null;
+        
         // ---- configure this for your site
         String driverName = "org.postgresql.Driver"; // POSTGRESQL JDBC driver
         String serverName = "localhost";
@@ -60,7 +61,7 @@ public class PGSQL_Connection {
                     Properties props = new Properties();
                     props.setProperty("user",username);
                     props.setProperty("password",password);
-                    //props.setProperty("ssl",connSSL);
+                    props.setProperty("ssl",connSSL);
                     connection = DriverManager.getConnection(jdbcUrl, props);
                     System.out.println ("Ok, connection to the DB is working.");
 		} catch (SQLException sqlex) {
